@@ -10,10 +10,7 @@ int main(int argc, char **argv)
     adb.Init();
     auto devices = adb.SearchDevices();
     if (!devices.empty()) {
-        auto packages = adb.SearchPackages(devices[0]);
-        for (auto &package : packages) {
-            printf("%s\n", package.c_str());
-        }
+        adb.EnableWireless(devices[0]);
     }
 
     return 0;

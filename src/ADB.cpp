@@ -58,6 +58,17 @@ namespace perf {
         return res;
     }
 
+    void ADB::EnableWireless(const std::string &id) const
+    {
+        std::stringstream ss;
+        // love from chat gpt
+        ss << "-s " << id << " shell \"ifconfig | grep -A 1 'wlan0' | grep 'inet addr' | cut -d ':' -f 2 | cut -d ' ' -f 1\"";
+        auto res = Execute(ss.str());
+        if (!res.empty()) {
+            printf("%s", res[0].c_str());
+        }
+    }
+
     std::vector<std::string> ADB::SearchPackages(const std::string &id) const
     {
         std::vector<std::string> res;

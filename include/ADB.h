@@ -32,6 +32,8 @@ namespace perf {
         bool Init();
         std::vector<std::string> SearchDevices();
         std::vector<std::string> SearchPackages(const std::string &id) const;
+        void EnableWireless(const std::string &id) const;
+
         std::vector<std::string> Execute(const std::string &cmd) const;
 
         std::string GetDeviceName(const std::string &id) const;
