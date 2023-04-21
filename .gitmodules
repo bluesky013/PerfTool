@@ -1,0 +1,3 @@
+[submodule "third-party/implot"]
+	path = third-party/implot
+	url = git@github.com:epezent/implot.git
